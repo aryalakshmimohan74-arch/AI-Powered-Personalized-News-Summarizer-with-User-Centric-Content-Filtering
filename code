@@ -1,0 +1,44 @@
+#Fetch and Parse News Articles
+
+from newspaper import Article
+
+url = "https://example.com/news-article"
+article = Article(url)
+article.download()
+article.parse()
+text = article.text
+title = article.title
+author = article.authors
+publish_date = article.publish_date
+
+
+#Summarize the Article
+# 1.Using Sumy (Extractive Summarization)
+from sumy.parsers.plaintext import PlaintextParser
+from sumy.nlp.tokenizers import Tokenizer
+from sumy.summarizers.lsa import LsaSummarizer
+
+parser = PlaintextParser.from_string(text, Tokenizer("english"))
+summarizer = LsaSummarizer()
+summary = summarizer(parser.document, 3)  # 3 sentences
+for sentence in summary:
+    print(sentence)
+#2.Using Transformers (Abstractive Summarization)
+from transformers import pipeline
+
+summarizer = pipeline("summarization")
+summary = summarizer(text, max_length=130, min_length=30, do_sample=False)
+print(summary[0]['summary_text'])
+
+#User-Centric Content Filtering
+user_keywords = ["AI", "healthcare", "technology"]
+if any(keyword.lower() in text.lower() for keyword in user_keywords):
+    # Proceed with summarization
+    pass
+#For sentiment filtering:
+from textblob import TextBlob
+
+sentiment = TextBlob(text).sentiment.polarity
+if sentiment > 0:  # Only positive articles
+    # Summarize
+    pass
