@@ -1,0 +1,1 @@
+pip install newspaper3k sumy transformers torch nltk textblob
