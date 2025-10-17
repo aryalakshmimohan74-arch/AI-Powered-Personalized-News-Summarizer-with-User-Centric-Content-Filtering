@@ -1,0 +1,63 @@
+AI-Powered Personalized News Summarizer
+A Python tool that fetches news articles, filters them based on user preferences (keywords, sentiment), and generates concise summaries using advanced NLP techniques.
+
+Features
+Scrapes and parses news articles from the web
+
+Filters articles by user-defined keywords and sentiment
+
+Generates both extractive and abstractive summaries
+
+Easy to customize and extend
+
+Tech Stack
+Python 3.8+
+
+newspaper3k (news scraping)
+
+sumy (extractive summarization)
+
+transformers (abstractive summarization)
+
+nltk, textblob (NLP and sentiment analysis)
+
+torch (for transformer models)
+
+Installation
+Clone the repository:
+
+bash
+git clone https://github.com/yourusername/news-summarizer.git
+cd news-summarizer
+Install dependencies:
+
+bash
+pip install newspaper3k sumy transformers torch nltk textblob
+Usage
+Edit user preferences in the script (keywords, sentiment).
+
+Run the script:
+
+bash
+python news_summarizer.py
+Input a news article URL when prompted.
+
+View the filtered and summarized output in your terminal.
+
+Example
+python
+user_keywords = ["AI", "healthcare", "technology"]
+sentiment_preference = "positive"
+Project Structure
+text
+news-summarizer/
+├── news_summarizer.py
+├── requirements.txt
+└── README.md
+Contributing
+Fork the repo and submit a pull request
+
+Open issues for bugs or feature requests
+
+License
+MIT License
