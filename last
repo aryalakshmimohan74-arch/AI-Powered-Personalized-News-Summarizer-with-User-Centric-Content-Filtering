@@ -1,0 +1,13 @@
+Step 5: Personalization and Output
+Store user preferences (keywords, topics, sentiment) in a config or database.
+
+Present summaries in a simple GUI (Tkinter) or web app (Flask/Streamlit).
+
+Optionally, add keyword extraction using BERT or spaCy for more advanced filtering.​
+
+Example Workflow
+User enters preferred topics and news sources.
+
+Script fetches latest articles, filters by user preferences.
+
+Summarizes filtered articles and displays concise summaries.
